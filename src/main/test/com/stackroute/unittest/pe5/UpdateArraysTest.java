@@ -1,6 +1,7 @@
 package com.stackroute.unittest.pe5;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
@@ -26,17 +27,12 @@ public class UpdateArraysTest {
 
     @org.junit.Test
     public void update() {
-        ArrayList<String> list=new ArrayList<String >();
-        list.add("Apple");
-        list.add("Grape");
-        list.add("Melon");
-        list.add("Berry");
+        ArrayList<String> list=new ArrayList<String>(Arrays.asList(new String[]{"Apple", "Grape", "Melon","Berry"}));
 
-        ArrayList<String>list1=new ArrayList<String>();
-        list1.add("Apple");
-        list1.add("Grape");
-        list1.add("kiwi");
-        list1.add("Berry");
+
+
+        ArrayList<String>list1=new ArrayList<String>(Arrays.asList(new String[]{"Apple", "Grape", "kiwi","Berry"}));
+
 
         assertEquals(list1,obj.update(list,2,"kiwi"));
 
@@ -45,26 +41,36 @@ public class UpdateArraysTest {
 
 
     @org.junit.Test
-    public void updateFailure() {
-        ArrayList<String> list=new ArrayList<String >();
-        list.add("Apple");
-        list.add("Grape");
-        list.add("Melon");
-        list.add("Berry");
+    public void replacingStringIsNull() {
+        ArrayList<String> list=new ArrayList<String>(Arrays.asList(new String[]{"Apple", "Grape", "Melon","Berry"}));
+
+        ArrayList<String>list1=new ArrayList<String>(Arrays.asList(new String[]{" ", "Grape", "Melon","Berry"}));
 
 
-        assertNotNull("Error",obj.update(list,0,"kiwi"));
+        assertEquals(list1,obj.update(list,0," "));
 
 
     }
 
     @org.junit.Test
+    public void arrayStringIsNull() {
+        ArrayList<String> list=new ArrayList<String>(Arrays.asList(new String[]{" "}));
+
+        ArrayList<String>list1=new ArrayList<String>(Arrays.asList(new String[]{"Grape"}));
+
+
+        assertEquals(list1,obj.update(list,0,"Grape"));
+
+
+    }
+
+
+
+
+    @org.junit.Test
     public void remove() {
-        ArrayList<String> list=new ArrayList<String >();
-        list.add("Apple");
-        list.add("Grape");
-        list.add("Melon");
-        list.add("Berry");
+        ArrayList<String> list=new ArrayList<String>(Arrays.asList(new String[]{"Apple", "Grape", "Melon","Berry"}));
+
 
         ArrayList<String>list1=new ArrayList<String >();
         assertEquals(list1,obj.remove(list));

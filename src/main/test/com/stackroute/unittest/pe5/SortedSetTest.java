@@ -6,7 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
@@ -32,35 +34,35 @@ public class SortedSetTest {
 
     @Test
     public void sort_set() {
-        HashSet<String> set=new HashSet<>();
-        set.add("Alice");
-        set.add("Bluto");
-        set.add("Eugene");
-        set.add("Harry");
-        set.add("Olive");
+        HashSet<String> set=new HashSet<String>(Arrays.stream(new String[]{"Alice", "Bluto", "Eugene","Harry","Olive"}).collect(Collectors.toCollection(HashSet::new)));
 
-        ArrayList<String> arr=new ArrayList<>();
-        arr.add("Alice");
-        arr.add("Bluto");
-        arr.add("Eugene");
-        arr.add("Harry");
-        arr.add("Olive");
-     assertEquals(arr,obj.sort_set(set));
+
+
+        ArrayList<String> arr=new ArrayList<String>(Arrays.asList(new String[]{"Alice", "Bluto", "Eugene","Harry","Olive"}));
+
+         assertEquals(arr,obj.sort_set(set));
     }
 
 
     @Test
-    public void sort_setFailure() {
-        HashSet<String> set=new HashSet<>();
-        set.add("Alice");
-        set.add("Carner");
-        set.add("Bluto");
-        set.add("Harry");
-        set.add("Olive");
-        set.add("Keshav");
-        set.add("Kumar");
+    public void sort_setNull() {
+        HashSet<String> set=new HashSet<String>(Arrays.stream(new String[]{" "}).collect(Collectors.toCollection(HashSet::new)));
 
-        assertNotNull("Error",obj.sort_set(set));
+        ArrayList<String> arr=new ArrayList<String>(Arrays.asList(new String[]{" "}));
+
+
+        assertEquals(arr,obj.sort_set(set));
+
+    }
+
+    @Test
+    public void sort_setOneElement() {
+        HashSet<String> set=new HashSet<String>(Arrays.stream(new String[]{"Sam"}).collect(Collectors.toCollection(HashSet::new)));
+
+        ArrayList<String> arr=new ArrayList<String>(Arrays.asList(new String[]{"Sam"}));
+
+
+        assertEquals(arr,obj.sort_set(set));
 
     }
 

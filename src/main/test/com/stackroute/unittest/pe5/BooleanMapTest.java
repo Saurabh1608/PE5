@@ -33,8 +33,10 @@ public class BooleanMapTest {
     }
 
     @Test
-    public void arr_mapFailure() {
-        String  arr[] = {"a","a","a","b","b","b","b","b","c"};
-        assertNotNull("Error",obj.arr_map(arr));
+    public void arr_mapNull() {
+        String  arr[] = {" "};
+        HashMap<String, Boolean> map = new HashMap<>();
+        map.put(" ",false);
+        assertEquals(map,obj.arr_map(arr));
     }
 }

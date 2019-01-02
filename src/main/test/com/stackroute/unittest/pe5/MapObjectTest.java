@@ -54,7 +54,7 @@ public class MapObjectTest {
         res.put("val1"," ");
         res.put("val2","mars");
 
-        assertEquals("Error",res,obj.modify(hm));
+        assertEquals(res,obj.modify(hm));
     }
 
 }

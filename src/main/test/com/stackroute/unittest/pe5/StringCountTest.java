@@ -28,19 +28,17 @@ public class StringCountTest {
         map.put("two",2);
         map.put("three",2);
 
-        assertEquals("error",map,obj.no_of_count(str));
+        assertEquals(map,obj.no_of_count(str));
 
     }
 
     @Test
-    public void no_of_countFailure() {
-        String str="one two three one two three one two three";
+    public void no_of_countNull() {
+        String str=" ";
         HashMap<String, Integer> map = new HashMap<>();
-        map.put("one",3);
-        map.put("two",3);
-        map.put("three",3);
 
-        assertNotNull("Error",obj.no_of_count(str));
+
+        assertEquals(map,obj.no_of_count(str));
 
     }
 }
