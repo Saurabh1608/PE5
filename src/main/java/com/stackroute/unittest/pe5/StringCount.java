@@ -7,7 +7,7 @@ Input : String str = “one one -one___two,,three,one @three*one?two”;
 Output : {"one":5 , "two":2, "three" :2}*/
 
 
-public class String_count {
+public class StringCount {
 
     public HashMap<String, Integer>no_of_count(String str ) {
 

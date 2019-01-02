@@ -8,7 +8,7 @@ Input: [Apple, Grape, Melon, Berry]
 Output: [Kiwi, Grape, Mango, Berry]
 Array list after removing all elements []   */
 
-public class Update_Arrays {
+public class UpdateArrays {
     public static ArrayList<String> update(ArrayList<String>list,int i,String str)
     {
         list.remove(i);

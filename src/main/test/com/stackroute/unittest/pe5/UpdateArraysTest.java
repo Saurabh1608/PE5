@@ -11,12 +11,12 @@ Array list after removing all elements []   */
 
 
 
-public class Update_ArraysTest {
-    Update_Arrays obj;
+public class UpdateArraysTest {
+    UpdateArrays obj;
 
     @org.junit.Before
     public void setUp() throws Exception {
-        obj=new Update_Arrays();
+        obj=new UpdateArrays();
     }
 
     @org.junit.After
@@ -38,7 +38,7 @@ public class Update_ArraysTest {
         list1.add("kiwi");
         list1.add("Berry");
 
-        assertEquals("Error",list1,obj.update(list,2,"kiwi"));
+        assertEquals(list1,obj.update(list,2,"kiwi"));
 
 
     }
@@ -67,7 +67,7 @@ public class Update_ArraysTest {
         list.add("Berry");
 
         ArrayList<String>list1=new ArrayList<String >();
-        assertEquals("Error",list1,obj.remove(list));
+        assertEquals(list1,obj.remove(list));
 
     }
 }

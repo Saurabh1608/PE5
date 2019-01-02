@@ -29,29 +29,9 @@ public class BooleanMapTest {
         map.put("b",false);
         map.put("c",true);
         map.put("d",false);
-        assertEquals("Error",map,obj.arr_map(arr));
+        assertEquals(map,obj.arr_map(arr));
     }
-    @Test
-    public void arr_map1() {
-        String  arr[] = {"a","b","c","e","a","c","c","d"};
-        HashMap<String, Boolean> map = new HashMap<>();
-        map.put("a",true);
-        map.put("b",false);
-        map.put("c",true);
-        map.put("d",false);
-        map.put("e",false);
-        assertEquals("Error",map,obj.arr_map(arr));
-    }
-    @Test
-    public void arr_map2() {
-        String  arr[] = {"a","a","a","b","b","b","b","b","c"};
-        HashMap<String, Boolean> map = new HashMap<>();
-        map.put("a",true);
-        map.put("b",true);
-        map.put("c",false);
 
-        assertEquals("Error",map,obj.arr_map(arr));
-    }
     @Test
     public void arr_mapFailure() {
         String  arr[] = {"a","a","a","b","b","b","b","b","c"};
